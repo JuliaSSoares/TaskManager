@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="ProjectManager">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+    <Class Name="ProjectManager.Module.BusinessObjects.ProjectTask">
+      <AppearanceRules>
+        <AppearanceRule Id="StatusCompletedGreen" FontStyle="Strikeout" FontColor="Black" Criteria="[Status] = ##Enum#ProjectManager.Module.BusinessObjects.Status,Completed#" TargetItems="*" BackColor="OliveDrab" IsNewNode="True" />
+        <AppearanceRule Id="StatusDeferredRed" BackColor="IndianRed" TargetItems="*" Criteria="[Status] = ##Enum#ProjectManager.Module.BusinessObjects.Status,Deferred#" FontColor="Black" IsNewNode="True" />
+        <AppearanceRule Id="StatusInProgressBlue" TargetItems="*" Criteria="[Status] = ##Enum#ProjectManager.Module.BusinessObjects.Status,InProgress#" BackColor="LightBlue" FontColor="Black" IsNewNode="True" />
+        <AppearanceRule Id="StatusToDoYellow" BackColor="255, 255, 192" Criteria="[Status] = ##Enum#ProjectManager.Module.BusinessObjects.Status,ToDo#" FontColor="Black" TargetItems="*" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="Employee_ListView" Removed="True" />
+          <Item Id="Project_ListView" Removed="True" />
+          <Item Id="ProjectTask_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Project" Caption="Project" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Employee_ListView" ViewId="Employee_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Project_ListView" ViewId="Project_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="ProjectTask_ListView" ViewId="ProjectTask_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="22.1.6.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+  </Views>
+</Application>
